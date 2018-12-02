@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	</head>
+    <body>
+        <form action="#" th:action="@{/producto}" th:object="${producto}" method="post">
+            <table>
+                <tr>
+                    <td>Nombre:</td>
+                    <td><input type="text" th:field="*{nombre}" /></td>
+                    <td th:if="${#fields.hasErrors('nombre')}" th:errors="${producto.nombre}">Nombre Error</td>
+                </tr>
+                <tr>
+                    <td>Precio:</td>
+                    <td><input type="text" th:field="*{precio}" /></td>
+                    <td th:if="${#fields.hasErrors('precio')}" th:errors="${producto.precio}">Nota1 Error</td>
+                </tr>
+                <tr>
+                    <td>Cantida:</td>
+                    <td><input type="text" th:field="*{cantidad}" /></td>
+                    <td th:if="${#fields.hasErrors('cantidad')}" th:errors="${producto.cantidad}">Nota2 Error</td>
+                </tr>
+            </table>
+                   <button type="submit" class="btn btn-primary">Calcular</button>
+        </form>
+    </body>
+</html>
