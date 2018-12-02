@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	</head>
+    <body>
+        <form action="#" th:action="@{/}" th:object="${alumno}" method="post">
+            <table>
+                <tr>
+                    <td>Nombre:</td>
+                    <td><input type="text" th:field="*{nombre}" /></td>
+                    <td th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}">Nombre Error</td>
+                </tr>
+                <tr>
+                    <td>Nota 1:</td>
+                    <td><input type="text" th:field="*{nota1}" /></td>
+                    <td th:if="${#fields.hasErrors('nota1')}" th:errors="*{nota1}">Nota1 Error</td>
+                </tr>
+                <tr>
+                    <td>Nota 2:</td>
+                    <td><input type="text" th:field="*{nota2}" /></td>
+                    <td th:if="${#fields.hasErrors('nota2')}" th:errors="*{nota2}">Nota2 Error</td>
+                </tr>
+                <tr>
+                    <td>Nota 3:</td>
+                    <td><input type="text" th:field="*{nota3}" /></td>
+                    <td th:if="${#fields.hasErrors('nota3')}" th:errors="*{nota3}">Nota3 Error</td>
+                </tr>
+            </table>
+                   <button type="submit" class="btn btn-primary">Calcular</button>
+        </form>
+    </body>
+</html>

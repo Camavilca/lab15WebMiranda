@@ -8,17 +8,17 @@
                 <tr>
                     <td>Nombre:</td>
                     <td><input type="text" th:field="*{nombre}" /></td>
-                    <td th:if="${#fields.hasErrors('nombre')}" th:errors="${producto.nombre}">nombre</td>
+                    <td th:if="${#fields.hasErrors('nombre')}" th:errors="${producto.nombre}">Nombre Error</td>
                 </tr>
                 <tr>
                     <td>Precio:</td>
                     <td><input type="text" th:field="*{precio}" /></td>
-                    <td th:if="${#fields.hasErrors('precio')}" th:errors="${producto.precio}">precio</td>
+                    <td th:if="${#fields.hasErrors('precio')}" th:errors="${producto.precio}">Nota1 Error</td>
                 </tr>
                 <tr>
                     <td>Cantida:</td>
                     <td><input type="text" th:field="*{cantidad}" /></td>
-                    <td th:if="${#fields.hasErrors('cantidad')}" th:errors="${producto.cantidad}">cantidad</td>
+                    <td th:if="${#fields.hasErrors('cantidad')}" th:errors="${producto.cantidad}">Nota2 Error</td>
                 </tr>
             </table>
                    <button type="submit" class="btn btn-primary">Calcular</button>

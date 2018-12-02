@@ -1,5 +1,7 @@
 package com.camavilca.controller;
 
+import java.util.Map;
+
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
@@ -25,10 +27,21 @@ public class ProductoController implements WebMvcConfigurer {
 	}
 
 	@PostMapping("/producto")
-	public String checkPersonInfo(@Valid Producto producto, BindingResult bindingResult) {
+	public String checkPersonInfo(@Valid Producto producto, BindingResult bindingResult,Map m) {
 		if (bindingResult.hasErrors()) {
 			return "form";
 		}
-		return "redirect:/resu";
+		double precio = producto.getPrecio();
+		int cantidad = producto.getCantidad();
+		double importe = cantidad * precio;
+		double res;
+		if(importe>1000) {
+			res = importe - (importe*0.5);
+		}else {
+			res = importe;
+		}
+		m.put("producto", res);
+		m.put("pro", producto);
+		return "resu";
 	}
 }

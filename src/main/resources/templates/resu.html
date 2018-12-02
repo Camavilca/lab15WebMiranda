@@ -1,5 +1,26 @@
 <html>
-	<body>
-          <input type="text" th:field="*{descuento}" />
-	</body>
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container mt-5">
+		<table class="table table-striped">
+			<tr>
+				<td>nombre:</td>
+				<td>producto:</td>	
+				<td>cantidad:</td>			
+				<td>total</td>
+			</tr>
+			<tr>
+				<td><p th:text="${pro.nombre}"></p></td>
+				<td><p th:text="${pro.precio}"></p></td>
+				<td><p th:text="${pro.cantidad}"></p></td>
+				<td><p th:text="${producto}"></p></td>
+			</tr>
+		</table>
+	</div>
+</body>
 </html>

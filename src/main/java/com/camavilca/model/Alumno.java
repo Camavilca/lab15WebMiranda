@@ -73,14 +73,19 @@ public class Alumno {
 	public void setNota3(Integer nota3) {
 		this.nota3 = nota3;
 	}
+	
+
 
 	public Alumno(@NotNull @Size(min = 5, max = 30) String nombre, @NotNull @Range(min = 0, max = 20) Integer nota1,
-			@NotNull @Range(min = 0, max = 20) Integer nota2, @NotNull @Range(min = 0, max = 20) Integer nota3) {
+			@NotNull @Range(min = 0, max = 20) Integer nota2, @NotNull @Range(min = 0, max = 20) Integer nota3,
+		    String condicion, int promedio) {
 		super();
 		this.nombre = nombre;
 		this.nota1 = nota1;
 		this.nota2 = nota2;
 		this.nota3 = nota3;
+		this.condicion = condicion;
+		this.promedio = promedio;
 	}
 
 	public Alumno() {
@@ -89,7 +94,9 @@ public class Alumno {
 
 	@Override
 	public String toString() {
-		return "Alumno [nombre=" + nombre + ", nota1=" + nota1 + ", nota2=" + nota2 + ", nota3=" + nota3 + "]";
+		return "Alumno [nombre=" + nombre + ", nota1=" + nota1 + ", nota2=" + nota2 + ", nota3=" + nota3 + 
+				", condicion=" + condicion + ", promedio=" + promedio + "]";
 	}
+	
 
 }
